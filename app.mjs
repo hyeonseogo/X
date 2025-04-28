@@ -5,11 +5,12 @@ import { config } from "./config.mjs";
 import cors from "cors"; // 추가
 
 const app = express();
+
 app.use(cors()); // 추가
 
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, "signuplogin")));
+app.use(express.static("signuplogin"));
 
 app.use("/posts", postsRouter);
 app.use("/auth", authRouter);
