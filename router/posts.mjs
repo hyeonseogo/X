@@ -2,6 +2,7 @@ import express from "express";
 import * as postController from "../controller/post.mjs";
 import { body } from "express-validator";
 import { validate } from "../middleware/validator.mjs";
+import { isAuth } from "../middleware/auth.mjs";
 
 const router = express.Router();
 
@@ -15,28 +16,28 @@ const validatePost = [
 // GET
 // http://127.0.0.1:9090/posts/
 // http://127.0.0.1:9090/posts?userid=apple
-router.get("/", postController.getPosts);
+router.get("/", isAuth, postController.getPosts);
 
 // 글번호에 대한 포스트 가져오기
 // GET
 // http://127.0.0.1:9090/posts/:id
-router.get("/:id", postController.getPost);
+router.get("/:id", isAuth, postController.getPost);
 
 // 포스트 쓰기
 // POST
 // http://127.0.0.1:9090/posts
 // json 형태로 입력 후 저장
-router.post("/", validatePost, postController.createPost);
+router.post("/", validatePost, isAuth, postController.createPost);
 
 // 포스트 수정하기
 // PUT
 // http://127.0.0.1:9090/posts/:id
 // json 형태로 입력 후 저장
-router.put("/:id", validatePost, postController.updatePost);
+router.put("/:id", validatePost, isAuth, postController.updatePost);
 
 // 포스트 삭제하기
 // DELETE
 // http://127.0.0.1:9090/posts/:id
-router.delete("/:id", postController.deletePost);
+router.delete("/:id", isAuth, postController.deletePost);
 
 export default router;
