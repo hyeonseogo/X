@@ -2,8 +2,10 @@ import express from "express";
 import postsRouter from "./router/posts.mjs";
 import authRouter from "./router/auth.mjs";
 import { config } from "./config.mjs";
+import cors from "cors"; // 추가
 
 const app = express();
+app.use(cors()); // 추가
 
 app.use(express.json());
 
