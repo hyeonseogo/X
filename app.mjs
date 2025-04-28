@@ -9,6 +9,8 @@ app.use(cors()); // 추가
 
 app.use(express.json());
 
+app.use(express.static("signuplogin"));
+
 app.use("/posts", postsRouter);
 app.use("/auth", authRouter);
 
