@@ -5,8 +5,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon app.mjs",
-    "start": "node app.mjs"
+    "dev": "nodemon app.mjs"
   },
   "keywords": [],
   "author": "",
@@ -17,7 +16,6 @@
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
-    "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "express-validator": "^7.2.1",
