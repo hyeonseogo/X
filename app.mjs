@@ -5,14 +5,11 @@ import { dirname as getDirname } from "path";
 import postsRouter from "./router/posts.mjs";
 import authRouter from "./router/auth.mjs";
 import { config } from "./config.mjs";
-import cors from "cors";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = getDirname(__filename);
 
 const app = express();
-
-app.use(cors());
 
 app.use(express.static("signuplogin"));
 app.use(express.json());
