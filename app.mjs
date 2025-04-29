@@ -34,6 +34,8 @@ app.use((req, res) => {
   res.sendStatus(404);
 });
 
-app.listen(config.host.port, () => {
-  console.log(`✅ 서버가 포트 ${config.host.port}에서 실행 중입니다`);
+const PORT = process.env.PORT || config.host.port;
+
+app.listen(PORT, () => {
+  console.log(`✅ 서버가 포트 ${PORT}에서 실행 중입니다`);
 });
