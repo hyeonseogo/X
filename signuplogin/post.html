@@ -61,7 +61,7 @@
       const postList = document.getElementById("post-list");
 
       // 페이지가 열리자마자 게시글 불러오기
-      fetch("http://127.0.0.1:9090/posts", {
+      fetch("/posts", {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,
